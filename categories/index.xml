@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Hugo博客Demo</title>
-    <link>https://www.zhenxing.site/categories/</link>
+    <link>https://zwuchang.github.io/categories/</link>
     <description>Recent content in Categories on Hugo博客Demo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 18 Dec 2019 21:55:00 +0800</lastBuildDate>
     
-	<atom:link href="https://www.zhenxing.site/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zwuchang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Golang</title>
-      <link>https://www.zhenxing.site/categories/Golang/</link>
+      <link>https://zwuchang.github.io/categories/Golang/</link>
       <pubDate>Wed, 18 Dec 2019 21:55:00 +0800</pubDate>
       
-      <guid>https://www.zhenxing.site/categories/Golang/</guid>
+      <guid>https://zwuchang.github.io/categories/Golang/</guid>
       <description></description>
     </item>
     
