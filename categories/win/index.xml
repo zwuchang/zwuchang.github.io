@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>win on Hugo博客Demo6666</title>
+    <link>https://zwuchang.github.io/categories/win/</link>
+    <description>Recent content in win on Hugo博客Demo6666</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 01 Jul 2020 15:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://zwuchang.github.io/categories/win/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解除win端口占用</title>
+      <link>https://zwuchang.github.io/post/2020-07-01-find-win-process/</link>
+      <pubDate>Wed, 01 Jul 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/2020-07-01-find-win-process/</guid>
+      <description>查找某个端口被哪个程序占用并结束它 查找特定端口 netstat -ano | findstr &amp;quot;6379&amp;quot; 根据PID找到对应进程 tasklist | findstr &amp;quot;pid num&amp;quot; 结束进程 taskkill /f /t /im 进程名.exe</description>
+    </item>
+    
+  </channel>
+</rss>
