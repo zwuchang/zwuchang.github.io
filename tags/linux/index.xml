@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Hugo博客Demo6666</title>
+    <link>https://zwuchang.github.io/tags/linux/</link>
+    <description>Recent content in linux on Hugo博客Demo6666</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 03 Jul 2020 16:06:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://zwuchang.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux命令小记</title>
+      <link>https://zwuchang.github.io/post/2020-07-01-linux-command/</link>
+      <pubDate>Fri, 03 Jul 2020 16:06:06 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/2020-07-01-linux-command/</guid>
+      <description>运行程序 命令行下运行 ./filename 运行filename命令 ctrl+c 退出当前运行的命令 后台运行 nohup command &amp;gt; out.file 2&amp;gt;&amp;amp;1&amp;amp; 后台运行command,正常输出和错误输出都写入out.file ps -ef | grep 关键字 | awk &#39;{print $2}&#39; | xargs kill 9 退出 服务方式运行 systemctl enable xxx 设置开机启动 systemctl start xxx 启动 systemctl stop xxx 关闭 安装软件 下载安装包方式 centos rpm 安装 rpm -i jdk-xxx_linux-x64_bin.rpm 查找 rpm -qa | grep</description>
+    </item>
+    
+  </channel>
+</rss>
