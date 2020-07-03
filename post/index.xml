@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Hugo博客Demo6666</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 03 Jul 2020 16:41:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 18:44:53 +0800</lastBuildDate>
     
 	<atom:link href="https://zwuchang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos7关闭图形界面</title>
+      <link>https://zwuchang.github.io/post/centos7%E5%85%B3%E9%97%AD%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</link>
+      <pubDate>Fri, 03 Jul 2020 18:44:53 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/centos7%E5%85%B3%E9%97%AD%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</guid>
+      <description>利用win10自带的虚拟机管理工具Hyper-V安装好CentOS7，把图形界面也给装上了，内存吃得厉害。赶紧把它关掉： 查看默认的target，执行： systemctl get-default 开机以命令模式启动，执行： systemctl set-default multi-user.target 开机以图形界面启动，执行： systemctl set-default graphical.target 然后重启： reboot</description>
+    </item>
     
     <item>
       <title>vim配置文件</title>
