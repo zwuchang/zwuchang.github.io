@@ -1,8 +1,9 @@
 +++
-title= "Linux命令小记"
-date=2020-07-03T16:06:06+08:00
-draft= true
-toc=true
+title = "Linux命令小记"
+date = "2020-07-03T16:06:06+08:00"
+tags = ["linux"]
+categories = ["linux"]
+toc = true
 +++
 
 ## 运行程序
