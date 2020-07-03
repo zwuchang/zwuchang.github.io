@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zwuchang.github.io/categories/</loc>
-    <lastmod>2020-07-03T16:06:06+08:00</lastmod>
+    <loc>https://zwuchang.github.io/</loc>
+    <lastmod>2020-07-03T16:41:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zwuchang.github.io/</loc>
+    <loc>https://zwuchang.github.io/post/</loc>
+    <lastmod>2020-07-03T16:41:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/post/2020-07-03-vim-config/</loc>
+    <lastmod>2020-07-03T16:41:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/categories/</loc>
     <lastmod>2020-07-03T16:06:06+08:00</lastmod>
   </url>
   
@@ -23,12 +33,7 @@
   </url>
   
   <url>
-    <loc>https://zwuchang.github.io/post/2020-07-01-linux-command/</loc>
-    <lastmod>2020-07-03T16:06:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/post/</loc>
+    <loc>https://zwuchang.github.io/post/2020-07-03-linux-command/</loc>
     <lastmod>2020-07-03T16:06:06+08:00</lastmod>
   </url>
   
@@ -54,11 +59,11 @@
   
   <url>
     <loc>https://zwuchang.github.io/about/</loc>
-    <lastmod>2015-03-10T00:13:27+00:00</lastmod>
+    <lastmod>2020-03-10T00:13:27+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zwuchang.github.io/tool/</loc>
+    <loc>https://zwuchang.github.io/tools/</loc>
   </url>
   
   <url>

@@ -6,17 +6,26 @@
     <description>Recent content in Posts on Hugo博客Demo6666</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 03 Jul 2020 16:06:06 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 16:41:31 +0800</lastBuildDate>
     
 	<atom:link href="https://zwuchang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>vim配置文件</title>
+      <link>https://zwuchang.github.io/post/2020-07-03-vim-config/</link>
+      <pubDate>Fri, 03 Jul 2020 16:41:31 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/2020-07-03-vim-config/</guid>
+      <description>Vim 是最重要的编辑器之一，主要有下面几个优点。 可以不使用鼠标，完全用键盘操作。 系统资源占用小，打开大文件毫无压力。 键盘命令变成肌肉记忆以后，操作速度极快。 服务器默认都安装 Vi 或 Vim。 Vim 的全局配置一般在/etc/vim/vimrc或者/etc/vimrc，对所有用户生效。用户个人的配</description>
+    </item>
+    
+    <item>
       <title>Linux命令小记</title>
-      <link>https://zwuchang.github.io/post/2020-07-01-linux-command/</link>
+      <link>https://zwuchang.github.io/post/2020-07-03-linux-command/</link>
       <pubDate>Fri, 03 Jul 2020 16:06:06 +0800</pubDate>
       
-      <guid>https://zwuchang.github.io/post/2020-07-01-linux-command/</guid>
+      <guid>https://zwuchang.github.io/post/2020-07-03-linux-command/</guid>
       <description>运行程序 命令行下运行 ./filename 运行filename命令 ctrl+c 退出当前运行的命令 后台运行 nohup command &amp;gt; out.file 2&amp;gt;&amp;amp;1&amp;amp; 后台运行command,正常输出和错误输出都写入out.file ps -ef | grep 关键字 | awk &#39;{print $2}&#39; | xargs kill 9 退出 服务方式运行 systemctl enable xxx 设置开机启动 systemctl start xxx 启动 systemctl stop xxx 关闭 安装软件 下载安装包方式 centos rpm 安装 rpm -i jdk-xxx_linux-x64_bin.rpm 查找 rpm -qa | grep</description>
     </item>
     
