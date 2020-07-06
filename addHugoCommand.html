@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>关于我 | Hugo博客Demo6666</title>
-    <meta property="og:title" content="关于我 - Hugo博客Demo6666">
+    <title>给hugo添加一个命令 | Hugo博客Demo6666</title>
+    <meta property="og:title" content="给hugo添加一个命令 - Hugo博客Demo6666">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-03-10T00:13:27&#43;08:00'>
+    <meta property="article:published_time" content='2020-07-06T13:52:32&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2020-03-10T00:13:27&#43;08:00'>
+    <meta property="article:modified_time" content='2020-07-06T13:52:32&#43;08:00'>
         
     <meta name="Keywords" content="xxxxxxxx xx xxx">
-    <meta name="description" content="说点啥子好">
+    <meta name="description" content="给hugo添加一个命令">
         
     <meta name="author" content="zhenxing">
-    <meta property="og:url" content="https://zwuchang.github.io/about/">
+    <meta property="og:url" content="https://zwuchang.github.io/addHugoCommand.html">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -50,7 +50,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://zwuchang.github.io/">首页</a>
+                    <a class="current" href="https://zwuchang.github.io/">首页</a>
                     
                     <a  href="https://zwuchang.github.io/archives/" title="归档">归档</a>
                     
@@ -133,7 +133,12 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#添加命令">添加命令</a></li>
+    <li><a href="#注册此命令">注册此命令</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -165,11 +170,20 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">关于我</h1>
+            <h1 class="post-title">给hugo添加一个命令</h1>
         </header>
         <date class="post-meta meta-date">
-            2020年3月10日
+            2020年7月6日
         </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://zwuchang.github.io/categories/go'>go</a></span>
+            
+            <span class="meta-category"><a href='https://zwuchang.github.io/categories/hugo'>hugo</a></span>
+            
+        </div>
         
         
         <div class="post-meta">
@@ -179,10 +193,97 @@
         
         
         <div class="post-content">
-            
+            <p>给hugo加一个命令，并发布到github上</p>
+<h2 id="添加命令">添加命令</h2>
+<ul>
+<li>在commands下新建一个文件pull.go内容如下</li>
+</ul>
+<pre><code>package commands
+
+import (
+	&quot;bytes&quot;
+	&quot;fmt&quot;
+	&quot;github.com/spf13/cobra&quot;
+	&quot;os/exec&quot;
+	&quot;strings&quot;
+)
+
+var _ cmder = (*deployCmd)(nil)
+
+type pullCmd struct {
+	*baseBuilderCmd
+}
+
+func (b *commandsBuilder) newPullCmd() *pullCmd {
+	cc := &amp;pullCmd{}
+
+	cmd := &amp;cobra.Command{
+		Use:   &quot;pull&quot;,
+		Short: &quot;须先配置好github，调用此命令将内容推送到github&quot;,
+		Long:  `须先配置好github，调用此命令将内容推送到github.`,
+
+		RunE: func(cmd *cobra.Command, args []string) error {
+			osCmdData := []string{
+				&quot;hugo&quot;,
+				&quot;git -C public add .&quot;,
+				`git -C public commit -m &quot;rebuild&quot;`,
+				&quot;git -C public push origin master&quot;,
+			}
+
+			for _, cmd := range osCmdData {
+				arr := strings.Split(cmd, &quot; &quot;)
+				_ = runOsCmd(arr[0], arr[1:])
+			}
+			return nil
+		},
+	}
+
+	cc.baseBuilderCmd = b.newBuilderBasicCmd(cmd)
+	return cc
+}
+
+func runOsCmd(command string, arg []string) error {
+	osCmd := exec.Command(command, arg...)
+	var stdout bytes.Buffer
+	var stderr bytes.Buffer
+	osCmd.Stdout = &amp;stdout
+	osCmd.Stderr = &amp;stderr
+	_ = osCmd.Run()
+	fmt.Printf(&quot;调用%s %s 返回:%v \n %v \n&quot;, command, arg, stderr.String(), stdout.String())
+	return nil
+}
+
+</code></pre><h2 id="注册此命令">注册此命令</h2>
+<p>编辑commands/commands.go，在方法addAll()调用b.addCommands中添加一行b.newPullCmd(),</p>
+<pre><code>	b.addCommands(
+		b.newServerCmd(),
+		newVersionCmd(),
+		newEnvCmd(),
+		b.newConfigCmd(),
+		newCheckCmd(),
+		b.newDeployCmd(),
+		b.newConvertCmd(),
+		b.newNewCmd(),
+		b.newListCmd(),
+		b.newPullCmd(), // 新增
+		newImportCmd(),
+		newGenCmd(),
+		createReleaser(),
+		b.newModCmd(),
+	)
+</code></pre>
         </div>
 
         
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://zwuchang.github.io/">zhenxing</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://zwuchang.github.io/addHugoCommand.html">https://zwuchang.github.io/addHugoCommand.html</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
 
 
         
@@ -191,11 +292,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/tools/">一些比较有用的工具网站</a></li>
+        <li><a href="/cenots7-set-default.html">Centos7关闭图形界面</a></li>
         
-        <li><a href="/archives/">归档</a></li>
+        <li><a href="/post/2020-07-03-vim-config/">vim配置文件</a></li>
         
-        <li><a href="/search/">搜索</a></li>
+        <li><a href="/post/2020-07-03-linux-command/">Linux命令小记</a></li>
+        
+        <li><a href="/post/2020-07-01-find-win-process/">解除win端口占用</a></li>
+        
+        <li><a href="/about/">关于我</a></li>
         
     </ul>
 </div>
@@ -203,7 +308,13 @@
 
         <div class="post-meta meta-tags">
             
-            没有标签
+            <ul class="clearfix">
+                
+                <li><a href='https://zwuchang.github.io/tags/go'>go</a></li>
+                
+                <li><a href='https://zwuchang.github.io/tags/hugo'>hugo</a></li>
+                
+            </ul>
             
         </div>
     </article>
