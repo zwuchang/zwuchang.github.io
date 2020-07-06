@@ -6,10 +6,19 @@
     <description>Recent content in php on 振星的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Nov 2017 17:16:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 07 May 2018 18:10:51 +0800</lastBuildDate>
     
 	<atom:link href="https://zwuchang.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>编译安装php7</title>
+      <link>https://zwuchang.github.io/install_php7.html</link>
+      <pubDate>Mon, 07 May 2018 18:10:51 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/install_php7.html</guid>
+      <description>&lt;p&gt;记录一次在centos下编译安装php7&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>使用file_get_contents发送post请求</title>

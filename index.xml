@@ -84,6 +84,15 @@
     </item>
     
     <item>
+      <title>编译安装php7</title>
+      <link>https://zwuchang.github.io/install_php7.html</link>
+      <pubDate>Mon, 07 May 2018 18:10:51 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/install_php7.html</guid>
+      <description>&lt;p&gt;记录一次在centos下编译安装php7&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>使用file_get_contents发送post请求</title>
       <link>https://zwuchang.github.io/post/file_get_content/</link>
       <pubDate>Tue, 21 Nov 2017 17:16:29 +0800</pubDate>
