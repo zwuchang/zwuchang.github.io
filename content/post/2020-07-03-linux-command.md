@@ -6,6 +6,8 @@ categories = ["linux"]
 toc = true
 +++
 
+一些linux命令
+<!--more-->
 ## 运行程序
 1. 命令行下运行
 ```
@@ -24,6 +26,16 @@ ps -ef | grep 关键字 | awk '{print $2}' | xargs kill 9 退出
 systemctl enable xxx  设置开机启动
 systemctl start xxx   启动
 systemctl stop xxx    关闭
+```
+
+4. 快速删除终端下命令
+```
+Ctrl+u 删除光标开始到最左面的所有命令
+Ctrl+k 删除光标开始到最右面的所有命令
+
+Ctrl+a 移动光标到命令最左侧
+Ctrl+e 移动光标到命令最右侧
+
 ```
 
 ## 安装软件
