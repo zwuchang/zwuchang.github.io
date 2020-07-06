@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>Redis小记</title>
+      <link>https://zwuchang.github.io/redis-comment.html</link>
+      <pubDate>Thu, 06 Sep 2018 11:21:39 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/redis-comment.html</guid>
+      <description>&lt;p&gt;Redis使用小记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Supervisor安装及使用</title>
       <link>https://zwuchang.github.io/post/supervisor/</link>
       <pubDate>Mon, 06 Aug 2018 16:59:07 +0800</pubDate>
