@@ -10,7 +10,7 @@ url: "/addHugoCommand.html"
 <!--more-->
 ## 添加命令
 * 在commands下新建一个文件pull.go内容如下
-```
+```go
 package commands
 
 import (
@@ -70,7 +70,7 @@ func runOsCmd(command string, arg []string) error {
 
 ## 注册此命令
 编辑commands/commands.go，在方法addAll()调用b.addCommands中添加一行b.newPullCmd(), 
-```
+```go
 	b.addCommands(
 		b.newServerCmd(),
 		newVersionCmd(),
