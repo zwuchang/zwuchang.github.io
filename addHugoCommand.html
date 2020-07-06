@@ -198,80 +198,163 @@
 <ul>
 <li>在commands下新建一个文件pull.go内容如下</li>
 </ul>
-<pre><code>package commands
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">package</span> commands
 
-import (
-	&quot;bytes&quot;
-	&quot;fmt&quot;
-	&quot;github.com/spf13/cobra&quot;
-	&quot;os/exec&quot;
-	&quot;strings&quot;
+<span style="color:#000;font-weight:bold">import</span> (
+	<span style="color:#d14">&#34;bytes&#34;</span>
+	<span style="color:#d14">&#34;fmt&#34;</span>
+	<span style="color:#d14">&#34;github.com/spf13/cobra&#34;</span>
+	<span style="color:#d14">&#34;os/exec&#34;</span>
+	<span style="color:#d14">&#34;strings&#34;</span>
 )
 
-var _ cmder = (*deployCmd)(nil)
+<span style="color:#000;font-weight:bold">var</span> _ cmder = (<span style="color:#000;font-weight:bold">*</span>deployCmd)(<span style="color:#000;font-weight:bold">nil</span>)
 
-type pullCmd struct {
-	*baseBuilderCmd
+<span style="color:#000;font-weight:bold">type</span> pullCmd <span style="color:#000;font-weight:bold">struct</span> {
+	<span style="color:#000;font-weight:bold">*</span>baseBuilderCmd
 }
 
-func (b *commandsBuilder) newPullCmd() *pullCmd {
-	cc := &amp;pullCmd{}
+<span style="color:#000;font-weight:bold">func</span> (b <span style="color:#000;font-weight:bold">*</span>commandsBuilder) <span style="color:#900;font-weight:bold">newPullCmd</span>() <span style="color:#000;font-weight:bold">*</span>pullCmd {
+	cc <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&amp;</span>pullCmd{}
 
-	cmd := &amp;cobra.Command{
-		Use:   &quot;pull&quot;,
-		Short: &quot;须先配置好github，调用此命令将内容推送到github&quot;,
-		Long:  `须先配置好github，调用此命令将内容推送到github.`,
+	cmd <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&amp;</span>cobra.Command{
+		Use:   <span style="color:#d14">&#34;pull&#34;</span>,
+		Short: <span style="color:#d14">&#34;须先配置好github，调用此命令将内容推送到github&#34;</span>,
+		Long:  <span style="color:#d14">`须先配置好github，调用此命令将内容推送到github.`</span>,
 
-		RunE: func(cmd *cobra.Command, args []string) error {
-			osCmdData := []string{
-				&quot;hugo&quot;,
-				&quot;git -C public add .&quot;,
-				`git -C public commit -m &quot;rebuild&quot;`,
-				&quot;git -C public push origin master&quot;,
+		RunE: <span style="color:#000;font-weight:bold">func</span>(cmd <span style="color:#000;font-weight:bold">*</span>cobra.Command, args []<span style="color:#458;font-weight:bold">string</span>) <span style="color:#458;font-weight:bold">error</span> {
+			osCmdData <span style="color:#000;font-weight:bold">:=</span> []<span style="color:#458;font-weight:bold">string</span>{
+				<span style="color:#d14">&#34;hugo&#34;</span>,
+				<span style="color:#d14">&#34;git -C public add .&#34;</span>,
+				<span style="color:#d14">`git -C public commit -m &#34;rebuild&#34;`</span>,
+				<span style="color:#d14">&#34;git -C public push origin master&#34;</span>,
 			}
 
-			for _, cmd := range osCmdData {
-				arr := strings.Split(cmd, &quot; &quot;)
-				_ = runOsCmd(arr[0], arr[1:])
+			<span style="color:#000;font-weight:bold">for</span> _, cmd <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">range</span> osCmdData {
+				arr <span style="color:#000;font-weight:bold">:=</span> strings.<span style="color:#900;font-weight:bold">Split</span>(cmd, <span style="color:#d14">&#34; &#34;</span>)
+				_ = <span style="color:#900;font-weight:bold">runOsCmd</span>(arr[<span style="color:#099">0</span>], arr[<span style="color:#099">1</span>:])
 			}
-			return nil
+			<span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">nil</span>
 		},
 	}
 
-	cc.baseBuilderCmd = b.newBuilderBasicCmd(cmd)
-	return cc
+	cc.baseBuilderCmd = b.<span style="color:#900;font-weight:bold">newBuilderBasicCmd</span>(cmd)
+	<span style="color:#000;font-weight:bold">return</span> cc
 }
 
-func runOsCmd(command string, arg []string) error {
-	osCmd := exec.Command(command, arg...)
-	var stdout bytes.Buffer
-	var stderr bytes.Buffer
-	osCmd.Stdout = &amp;stdout
-	osCmd.Stderr = &amp;stderr
-	_ = osCmd.Run()
-	fmt.Printf(&quot;调用%s %s 返回:%v \n %v \n&quot;, command, arg, stderr.String(), stdout.String())
-	return nil
+<span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">runOsCmd</span>(command <span style="color:#458;font-weight:bold">string</span>, arg []<span style="color:#458;font-weight:bold">string</span>) <span style="color:#458;font-weight:bold">error</span> {
+	osCmd <span style="color:#000;font-weight:bold">:=</span> exec.<span style="color:#900;font-weight:bold">Command</span>(command, arg<span style="color:#000;font-weight:bold">...</span>)
+	<span style="color:#000;font-weight:bold">var</span> stdout bytes.Buffer
+	<span style="color:#000;font-weight:bold">var</span> stderr bytes.Buffer
+	osCmd.Stdout = <span style="color:#000;font-weight:bold">&amp;</span>stdout
+	osCmd.Stderr = <span style="color:#000;font-weight:bold">&amp;</span>stderr
+	_ = osCmd.<span style="color:#900;font-weight:bold">Run</span>()
+	fmt.<span style="color:#900;font-weight:bold">Printf</span>(<span style="color:#d14">&#34;调用%s %s 返回:%v \n %v \n&#34;</span>, command, arg, stderr.<span style="color:#900;font-weight:bold">String</span>(), stdout.<span style="color:#900;font-weight:bold">String</span>())
+	<span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">nil</span>
 }
 
-</code></pre><h2 id="注册此命令">注册此命令</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="注册此命令">注册此命令</h2>
 <p>编辑commands/commands.go，在方法addAll()调用b.addCommands中添加一行b.newPullCmd(),</p>
-<pre><code>	b.addCommands(
-		b.newServerCmd(),
-		newVersionCmd(),
-		newEnvCmd(),
-		b.newConfigCmd(),
-		newCheckCmd(),
-		b.newDeployCmd(),
-		b.newConvertCmd(),
-		b.newNewCmd(),
-		b.newListCmd(),
-		b.newPullCmd(), // 新增
-		newImportCmd(),
-		newGenCmd(),
-		createReleaser(),
-		b.newModCmd(),
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	b.<span style="color:#900;font-weight:bold">addCommands</span>(
+		b.<span style="color:#900;font-weight:bold">newServerCmd</span>(),
+		<span style="color:#900;font-weight:bold">newVersionCmd</span>(),
+		<span style="color:#900;font-weight:bold">newEnvCmd</span>(),
+		b.<span style="color:#900;font-weight:bold">newConfigCmd</span>(),
+		<span style="color:#900;font-weight:bold">newCheckCmd</span>(),
+		b.<span style="color:#900;font-weight:bold">newDeployCmd</span>(),
+		b.<span style="color:#900;font-weight:bold">newConvertCmd</span>(),
+		b.<span style="color:#900;font-weight:bold">newNewCmd</span>(),
+		b.<span style="color:#900;font-weight:bold">newListCmd</span>(),
+		b.<span style="color:#900;font-weight:bold">newPullCmd</span>(), <span style="color:#998;font-style:italic">// 新增
+</span><span style="color:#998;font-style:italic"></span>		<span style="color:#900;font-weight:bold">newImportCmd</span>(),
+		<span style="color:#900;font-weight:bold">newGenCmd</span>(),
+		<span style="color:#900;font-weight:bold">createReleaser</span>(),
+		b.<span style="color:#900;font-weight:bold">newModCmd</span>(),
 	)
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
         </div>
 
         
@@ -319,26 +402,7 @@ func runOsCmd(command string, arg []string) error {
         </div>
     </article>
     
-    <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
     
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
     
     
