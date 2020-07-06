@@ -17,7 +17,7 @@
       <pubDate>Wed, 01 Jul 2020 15:00:00 +0800</pubDate>
       
       <guid>https://zwuchang.github.io/post/2020-07-01-find-win-process/</guid>
-      <description>查找某个端口被哪个程序占用并结束它 查找特定端口 netstat -ano | findstr &amp;quot;6379&amp;quot; 根据PID找到对应进程 tasklist | findstr &amp;quot;pid num&amp;quot; 结束进程 taskkill /f /t /im 进程名.exe</description>
+      <description>&lt;p&gt;查找某个端口被哪个程序占用并结束它&lt;/p&gt;</description>
     </item>
     
   </channel>
