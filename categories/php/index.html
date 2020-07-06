@@ -6,20 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>一些比较有用的工具网站 | Hugo博客Demo6666</title>
-    <meta property="og:title" content="一些比较有用的工具网站 - Hugo博客Demo6666">
+    <title>php | Hugo博客Demo6666</title>
+    <meta property="og:title" content="php - Hugo博客Demo6666">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="xxxxxxxx xx xxx">
-    <meta name="description" content="工具页">
+    <meta name="description" content="php">
         
     <meta name="author" content="zhenxing">
-    <meta property="og:url" content="https://zwuchang.github.io/tools/">
+    <meta property="og:url" content="https://zwuchang.github.io/categories/php/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="https://zwuchang.github.io/categories/php/index.xml" title="Hugo博客Demo6666" />
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -50,7 +51,7 @@
                     
                     <a  href="https://zwuchang.github.io/archives/" title="归档">归档</a>
                     
-                    <a class="current" href="https://zwuchang.github.io/tools/" title="工具">工具</a>
+                    <a  href="https://zwuchang.github.io/tools/" title="工具">工具</a>
                     
                 </nav>
             </div>
@@ -65,160 +66,45 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    <style type="text/css">
-    .post-toc {
-        position: fixed;
-        width: 200px;
-        margin-left: -210px;
-        padding: 5px 10px;
-        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, .07);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.98);
-        background-clip: padding-box;
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        word-wrap: break-word;
-        white-space: nowrap;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        z-index: 999;
-        cursor: pointer;
-        max-height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
+    
+    <h3 class="archive-title">
+        分类
+        <span class="keyword">php</span>
+        中的文章
+    </h3>
+    
 
-    .post-toc .post-toc-title {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .post-toc .post-toc-content {
-        font-size: 15px;
-    }
-
-    .post-toc .post-toc-content>nav>ul {
-        margin: 10px 0;
-    }
-
-    .post-toc .post-toc-content ul {
-        padding-left: 20px;
-        list-style: square;
-        margin: 0.5em;
-        line-height: 1.8em;
-    }
-
-    .post-toc .post-toc-content ul ul {
-        padding-left: 15px;
-        display: none;
-    }
-
-    @media print,
-    screen and (max-width:1057px) {
-        .post-toc {
-            display: none;
-        }
-    }
-</style>
-<div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#正则测试">正则测试</a></li>
-  </ul>
-</nav>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var postToc = $(".post-toc");
-        if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
-            }
-
-            var t = postToc.offset().top - 20,
-                a = {
-                    start: {
-                        position: "absolute",
-                        top: t
-                    },
-                    process: {
-                        position: "fixed",
-                        top: 20
-                    },
-                };
-            $(window).scroll(function () {
-                var e = $(window).scrollTop();
-                e < t ? postToc.css(a.start) : postToc.css(a.process)
-            })
-        }
-    })
-</script>
+    
     <article class="post">
         <header>
-            <h1 class="post-title">一些比较有用的工具网站</h1>
+            <h1 class="post-title">
+                <a href="https://zwuchang.github.io/post/file_get_content/">使用file_get_contents发送post请求</a>
+            </h1>
         </header>
         <date class="post-meta meta-date">
-            1年1月1日
+            2017年11月21日
         </date>
         
-        
-        <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='https://zwuchang.github.io/categories/php'>php</a>
+            
         </div>
-        
         
         <div class="post-content">
-            <p>列出一些平常用到的工具网站</p>
-<h2 id="正则测试">正则测试</h2>
-<p><a href="https://www.regexpal.com/" target="_blank">点此访问：https://www.regexpal.com/</a></p>
-
-        </div>
-
-        
-
-
-        
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="/addHugoCommand.html">给hugo添加一个命令</a></li>
-        
-        <li><a href="/cenots7-set-default.html">Centos7关闭图形界面</a></li>
-        
-        <li><a href="/post/2020-07-03-vim-config/">vim配置文件</a></li>
-        
-        <li><a href="/post/2020-07-03-linux-command/">Linux命令小记</a></li>
-        
-        <li><a href="/post/2020-07-01-find-win-process/">解除win端口占用</a></li>
-        
-    </ul>
-</div>
-
-
-        <div class="post-meta meta-tags">
-            
-            没有标签
-            
+            <p>使用file_get_contents发送post请求</p>……
+            <p class="readmore"><a href="https://zwuchang.github.io/post/file_get_content/">阅读全文</a></p>
         </div>
     </article>
     
-    
 
     
-    
+
+
+
+
+
 </div>
 
                 </div>
@@ -338,17 +224,6 @@
     </div>
 </footer>
 
-
-    
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [['$', '$']],
-                processEscapes: true
-                }
-            };
-    </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>

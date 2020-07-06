@@ -66,6 +66,24 @@
     </item>
     
     <item>
+      <title>Supervisor安装及使用</title>
+      <link>https://zwuchang.github.io/post/supervisor/</link>
+      <pubDate>Mon, 06 Aug 2018 16:59:07 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/supervisor/</guid>
+      <description>&lt;p&gt;Supervisor安装及使用&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用file_get_contents发送post请求</title>
+      <link>https://zwuchang.github.io/post/file_get_content/</link>
+      <pubDate>Tue, 21 Nov 2017 17:16:29 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/file_get_content/</guid>
+      <description>&lt;p&gt;使用file_get_contents发送post请求&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>一些比较有用的工具网站</title>
       <link>https://zwuchang.github.io/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
