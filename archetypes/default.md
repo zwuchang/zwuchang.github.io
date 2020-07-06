@@ -1,11 +1,11 @@
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
-tags: ["go"]
-categories:  ["go"]
-toc: true
----
++++
+title='{{ replace .Name "-" " " | title }}'
+tags=[]
+categories=[]
+date="{{ .Date }}"
+toc=true
+draft=true
++++
 
 以上内容为显示的文章摘要
 <!--more-->
