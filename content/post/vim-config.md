@@ -55,6 +55,18 @@ set langmenu=zh_CN.UTF-8
 set helplang=cn
 set cmdheight=2
 filetype on
-
+set pastetoggle=<F9>  "切换paste开关的选项
 nmap tt :%s/\t/    /g<CR>
+```
+
+## 粘贴模式
+在windows复制某段代码进vim时，可能会导致原有缩进乱了，使用set paste设置一下：
+```
+set paste
+```
+
+## 退出粘贴模式
+进入vim
+```
+set nopaste
 ```
