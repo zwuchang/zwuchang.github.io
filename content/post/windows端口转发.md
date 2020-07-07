@@ -1,7 +1,7 @@
 +++
 title='Windows端口转发'
-tags=[]
-categories=[]
+tags=['win']
+categories=['win']
 date="2020-07-07T11:15:36+08:00"
 toc=true
 url="windows_portproxy.html"
