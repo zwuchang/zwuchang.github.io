@@ -3,7 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zwuchang.github.io/categories/</loc>
+    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zwuchang.github.io/post/</loc>
+    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/tags/</loc>
+    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/tags/win/</loc>
+    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/categories/win/</loc>
     <lastmod>2020-07-07T11:15:36+08:00</lastmod>
   </url>
   
@@ -15,11 +35,6 @@
   <url>
     <loc>https://zwuchang.github.io/</loc>
     <lastmod>2020-07-07T11:15:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/categories/</loc>
-    <lastmod>2020-07-06T13:52:32+08:00</lastmod>
   </url>
   
   <url>
@@ -39,11 +54,6 @@
   
   <url>
     <loc>https://zwuchang.github.io/categories/hugo/</loc>
-    <lastmod>2020-07-06T13:52:32+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/tags/</loc>
     <lastmod>2020-07-06T13:52:32+08:00</lastmod>
   </url>
   
@@ -75,16 +85,6 @@
   <url>
     <loc>https://zwuchang.github.io/post/2020-07-03-linux-command/</loc>
     <lastmod>2020-07-03T16:06:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/tags/win/</loc>
-    <lastmod>2020-07-01T15:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/categories/win/</loc>
-    <lastmod>2020-07-01T15:00:00+08:00</lastmod>
   </url>
   
   <url>
