@@ -3,18 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zwuchang.github.io/tags/bash/</loc>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/categories/bash/</loc>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zwuchang.github.io/categories/</loc>
-    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/tags/centos7/</loc>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/centos_bash.html</loc>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zwuchang.github.io/post/</loc>
-    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zwuchang.github.io/tags/</loc>
-    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/</loc>
+    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
   </url>
   
   <url>
@@ -29,11 +54,6 @@
   
   <url>
     <loc>https://zwuchang.github.io/windows_portproxy.html</loc>
-    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/</loc>
     <lastmod>2020-07-07T11:15:36+08:00</lastmod>
   </url>
   
@@ -140,6 +160,21 @@
   <url>
     <loc>https://zwuchang.github.io/post/file_get_content/</loc>
     <lastmod>2017-11-21T17:16:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/tags/vim/</loc>
+    <lastmod>2017-09-04T15:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/categories/vim/</loc>
+    <lastmod>2017-09-04T15:10:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/post/vim%E7%A7%BB%E5%8A%A8%E8%A1%8C/</loc>
+    <lastmod>2017-09-04T15:10:25+08:00</lastmod>
   </url>
   
   <url>

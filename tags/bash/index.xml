@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on 振星的博客</title>
+    <link>https://zwuchang.github.io/tags/bash/</link>
+    <description>Recent content in bash on 振星的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 07 Jul 2020 13:46:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://zwuchang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux_bash基础</title>
+      <link>https://zwuchang.github.io/centos_bash.html</link>
+      <pubDate>Tue, 07 Jul 2020 13:46:44 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/centos_bash.html</guid>
+      <description>&lt;p&gt;shell的简单历史：第一个流行的shell是由Steven Bourne发展出来的，为了纪念他所以就称为Bourne shell ，或直接简称为sh ！而后来另一个广为流传的shell是由柏克莱大学的Bill Joy设计依附于BSD版的Unix系统中的shell ，这个shell的语法有点类似C语言，所以才得名为C shell ，简称为csh ！由于在学术界Sun主机势力相当的庞大，而Sun主要是BSD的分支之一，所以C shell也是另一个很重要而且流传很广的shell之一。&lt;/p&gt;
+&lt;p&gt;由于Linux是用C语言编写的，很多程序员使用C来开发软件，因此C shell相对的就很热门了。
+目前我们的Linux (以CentOS 7.x 为例) 有多少我们可以使用的shells 呢？你可以检查一下/etc/shells 这个档案，至少就有底下这几个可以用的shells ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/bin/sh (已经被/bin/bash 所取代)&lt;/li&gt;
+&lt;li&gt;/bin/bash (就是Linux 预设的shell)&lt;/li&gt;
+&lt;li&gt;/bin/tcsh (整合C Shell ，提供更多的功能)&lt;/li&gt;
+&lt;li&gt;/bin/csh (已经被/bin/tcsh 所取代)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
