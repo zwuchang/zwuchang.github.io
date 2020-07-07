@@ -13,10 +13,10 @@
     
     <item>
       <title>Vim移动行</title>
-      <link>https://zwuchang.github.io/post/vim%E7%A7%BB%E5%8A%A8%E8%A1%8C/</link>
+      <link>https://zwuchang.github.io/vim_move.html</link>
       <pubDate>Mon, 04 Sep 2017 15:10:25 +0800</pubDate>
       
-      <guid>https://zwuchang.github.io/post/vim%E7%A7%BB%E5%8A%A8%E8%A1%8C/</guid>
+      <guid>https://zwuchang.github.io/vim_move.html</guid>
       <description>&lt;p&gt;vim中怎么移动文件内容呢，可以使用move&lt;/p&gt;</description>
     </item>
     
