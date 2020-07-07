@@ -4,6 +4,7 @@ tags=['vim']
 categories=['vim']
 date="2017-09-04T15:10:25+08:00"
 toc=true
+url="vim_move.html"
 +++
 
 vim中怎么移动文件内容呢，可以使用move
