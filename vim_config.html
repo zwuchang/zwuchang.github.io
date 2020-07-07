@@ -136,6 +136,8 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#配置参考">配置参考</a></li>
+    <li><a href="#粘贴模式">粘贴模式</a></li>
+    <li><a href="#退出粘贴模式">退出粘贴模式</a></li>
   </ul>
 </nav>
     </div>
@@ -232,8 +234,14 @@ set langmenu=zh_CN.UTF-8
 set helplang=cn
 set cmdheight=2
 filetype on
-
+set pastetoggle=&lt;F9&gt;  &quot;切换paste开关的选项
 nmap tt :%s/\t/    /g&lt;CR&gt;
+</code></pre><h2 id="粘贴模式">粘贴模式</h2>
+<p>在windows复制某段代码进vim时，可能会导致原有缩进乱了，使用set paste设置一下：</p>
+<pre><code>set paste
+</code></pre><h2 id="退出粘贴模式">退出粘贴模式</h2>
+<p>进入vim</p>
+<pre><code>set nopaste
 </code></pre>
         </div>
 
