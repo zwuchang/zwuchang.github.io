@@ -133,7 +133,13 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#查看">查看</a></li>
+    <li><a href="#设置">设置</a></li>
+    <li><a href="#实时切换">实时切换</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -185,19 +191,29 @@
         </div>
         
         
-        <span class="post-word-count">, 174 words</span>
+        <span class="post-word-count">, 176 words</span>
 
         <div class="post-content">
             <p>利用win10自带的虚拟机管理工具Hyper-V安装好CentOS7，把图形界面也给装上了，内存吃得厉害。赶紧把它关掉</p>
-<p>利用win10自带的虚拟机管理工具Hyper-V安装好CentOS7，把图形界面也给装上了，内存吃得厉害。赶紧把它关掉：</p>
+<ul>
+<li>graphical.target 图形+文字模式</li>
+<li>multi-user.target 纯文字模式</li>
+</ul>
+<h2 id="查看">查看</h2>
 <p>查看默认的target，执行：</p>
 <pre><code>systemctl get-default
-</code></pre><p>开机以命令模式启动，执行：</p>
+</code></pre><h2 id="设置">设置</h2>
+<p>开机以命令模式启动，执行：</p>
 <pre><code>systemctl set-default multi-user.target
 </code></pre><p>开机以图形界面启动，执行：</p>
 <pre><code>systemctl set-default graphical.target
-</code></pre><p>然后重启：</p>
+</code></pre><p>重启后就会进入设置的模式中</p>
 <pre><code>reboot
+</code></pre><h2 id="实时切换">实时切换</h2>
+<p>不需要重启关闭图形界面：</p>
+<pre><code>systemctl isolate multi-user.target
+</code></pre><p>相应地，不重启进入图形界面：</p>
+<pre><code> systemctl isolate graphical.target
 </code></pre>
         </div>
 
