@@ -1,11 +1,12 @@
 {{ define "content"}}
 <div class="post-archive">
+    加油啊，已经写了 {{ len (where (where .Site.Pages "Type" "in" (slice "post" "posts")) "Kind" "page") }} 篇
     {{ range (where (where .Site.Pages "Type" "in" (slice "post" "posts")) "Kind" "page").GroupByDate "2006" }}
     <h2>{{ .Key }}</h2>
     <ul class="listing">
         {{ range .Pages }}
         <li>
-            <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+            <span class="date">{{ .Date.Format "2006-01-02" }}</span>
             <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
         </li>
         {{ end }}
