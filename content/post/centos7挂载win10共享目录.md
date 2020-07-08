@@ -1,7 +1,7 @@
 +++
 title='Centos7挂载win10共享目录'
-tags=[]
-categories=[]
+tags=['win','centos7']
+categories=['win','centos7']
 date="2020-07-08T11:18:14+08:00"
 toc=true
 url="centos7_mount_win10_share.html"
