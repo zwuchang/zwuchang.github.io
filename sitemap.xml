@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zwuchang.github.io/categories/</loc>
+    <lastmod>2020-07-08T11:18:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/tags/centos7/</loc>
+    <lastmod>2020-07-08T11:18:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/categories/centos7/</loc>
+    <lastmod>2020-07-08T11:18:14+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zwuchang.github.io/centos7_mount_win10_share.html</loc>
     <lastmod>2020-07-08T11:18:14+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zwuchang.github.io/post/</loc>
+    <lastmod>2020-07-08T11:18:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/tags/</loc>
+    <lastmod>2020-07-08T11:18:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/tags/win/</loc>
+    <lastmod>2020-07-08T11:18:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zwuchang.github.io/categories/win/</loc>
     <lastmod>2020-07-08T11:18:14+08:00</lastmod>
   </url>
   
@@ -28,33 +58,8 @@
   </url>
   
   <url>
-    <loc>https://zwuchang.github.io/categories/</loc>
-    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/tags/centos7/</loc>
-    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zwuchang.github.io/centos_bash.html</loc>
     <lastmod>2020-07-07T13:46:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/tags/</loc>
-    <lastmod>2020-07-07T13:46:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/tags/win/</loc>
-    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zwuchang.github.io/categories/win/</loc>
-    <lastmod>2020-07-07T11:15:36+08:00</lastmod>
   </url>
   
   <url>
