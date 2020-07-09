@@ -27,9 +27,6 @@ set sm
 set selection=inclusive
 set wildmenu
 
-au FileType php setlocal dict+=~/.vim/dict/php_funclist.dict
-
-syntax on
 set cul
 set cuc
 set shortmess=atI
@@ -41,11 +38,11 @@ set showcmd
 set scrolloff=3
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容 
 set laststatus=2
-set nocompatible
+set nocompatible "突出当前行
 
 set cindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=4 " 设置Tab长度为4空格
+set shiftwidth=4 " 设置自动缩进长度为4空格
 set expandtab
 set number
 set history=1200
@@ -54,9 +51,15 @@ set incsearch
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 set cmdheight=2
-filetype on
 set pastetoggle=<F9>  "切换paste开关的选项
 nmap tt :%s/\t/    /g<CR>
+
+syntax on " 开启文件类型侦测
+filetype plugin indent on    " 启用自动补全
+" 退出插入模式指定类型的文件自动保存
+au InsertLeave *.go,*.sh,*.php write
+au FileType php setlocal dict+=~/.vim/dict/php_funclist.dict
+
 ```
 
 ## 粘贴模式
@@ -70,3 +73,12 @@ set paste
 ```
 set nopaste
 ```
+
+## vim中清空内容
+1. 按<kbd>ggdG`</kbd>
+2. 命令模式下：
+```
+:%d
+```
+
+export HTTP_PROXY=http://127.0.0.1:1081; export HTTPS_PROXY=http://127.0.0.1:1081; export ALL_PROXY=socks5://127.0.0.1:1080
