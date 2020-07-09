@@ -138,6 +138,7 @@
     <li><a href="#配置参考">配置参考</a></li>
     <li><a href="#粘贴模式">粘贴模式</a></li>
     <li><a href="#退出粘贴模式">退出粘贴模式</a></li>
+    <li><a href="#vim中清空内容">vim中清空内容</a></li>
   </ul>
 </nav>
     </div>
@@ -184,7 +185,7 @@
         </div>
         
         
-        <span class="post-word-count">, 364 words</span>
+        <span class="post-word-count">, 467 words</span>
 
         <div class="post-content">
             <p>记录一下使用过的一个vim配置</p>
@@ -208,9 +209,6 @@ set sm
 set selection=inclusive
 set wildmenu
 
-au FileType php setlocal dict+=~/.vim/dict/php_funclist.dict
-
-syntax on
 set cul
 set cuc
 set shortmess=atI
@@ -222,11 +220,11 @@ set showcmd
 set scrolloff=3
 set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\&quot;%d/%m/%y\ -\ %H:%M\&quot;)}   &quot;状态行显示的内容 
 set laststatus=2
-set nocompatible
+set nocompatible &quot;突出当前行
 
 set cindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=4 &quot; 设置Tab长度为4空格
+set shiftwidth=4 &quot; 设置自动缩进长度为4空格
 set expandtab
 set number
 set history=1200
@@ -235,16 +233,28 @@ set incsearch
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 set cmdheight=2
-filetype on
 set pastetoggle=&lt;F9&gt;  &quot;切换paste开关的选项
 nmap tt :%s/\t/    /g&lt;CR&gt;
+
+syntax on &quot; 开启文件类型侦测
+filetype plugin indent on    &quot; 启用自动补全
+&quot; 退出插入模式指定类型的文件自动保存
+au InsertLeave *.go,*.sh,*.php write
+au FileType php setlocal dict+=~/.vim/dict/php_funclist.dict
+
 </code></pre><h2 id="粘贴模式">粘贴模式</h2>
 <p>在windows复制某段代码进vim时，可能会导致原有缩进乱了，使用set paste设置一下：</p>
 <pre><code>set paste
 </code></pre><h2 id="退出粘贴模式">退出粘贴模式</h2>
 <p>进入vim</p>
 <pre><code>set nopaste
-</code></pre>
+</code></pre><h2 id="vim中清空内容">vim中清空内容</h2>
+<ol>
+<li>按<kbd>ggdG`</kbd></li>
+<li>命令模式下：</li>
+</ol>
+<pre><code>:%d
+</code></pre><p>export HTTP_PROXY=http://127.0.0.1:1081; export HTTPS_PROXY=http://127.0.0.1:1081; export ALL_PROXY=socks5://127.0.0.1:1080</p>
         </div>
 
         
