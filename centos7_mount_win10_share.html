@@ -198,7 +198,7 @@
             </div>
         </div>
         
-        <span class="post-word-count">, 387 words</span>
+        <span class="post-word-count">, 395 words</span>
 
         <div class="post-content">
             <p>记录一下在我windows10通过Hyper-V安装的Centos7挂载windows10共享目录的设置</p>
@@ -208,7 +208,10 @@
 <img src="/images/2020/07/win10_share2.png" alt="共享设置截图">
 <img src="/images/2020/07/win10_share3.png" alt="共享设置截图"></p>
 <h2 id="centos7挂载">Centos7挂载</h2>
-<p>把pc换成你windows共享时设置的用户名，ip换成你windows的IP地址：</p>
+<blockquote>
+<p>centos 需安装 <code>yum install -y cifs-utils</code>
+把pc换成你windows共享时设置的用户名，ip换成你windows的IP地址：</p>
+</blockquote>
 <pre><code>mkdir /mnt/win10share
 mount -t cifs -o username=pc //192.168.9.166/share /mnt/win10share
 </code></pre><p>执行以上命令
