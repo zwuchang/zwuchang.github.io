@@ -18,6 +18,7 @@ url="centos7_mount_win10_share.html"
 ![共享设置截图](/images/2020/07/win10_share3.png)
 
 ## Centos7挂载
+> centos 需安装 `yum install -y cifs-utils`
 把pc换成你windows共享时设置的用户名，ip换成你windows的IP地址：
 ```
 mkdir /mnt/win10share
