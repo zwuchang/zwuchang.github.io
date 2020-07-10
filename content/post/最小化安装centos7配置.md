@@ -12,13 +12,16 @@ url="mini_install_centos7_config.html"
 
 ## IP配置
 编辑 /etc/sysconfig/network-scripts/ifcfg-eth0 
+```
+ONBOOT=yes              #开机启动
 
-ONBOOT=yes              #开启自动启用网络连接
-IPADDR0=192.168.169.22  #设置IP地址
-PREFIXO0=24             #设置子网掩码
-GATEWAY0=192.168.169.2  #设置网关
-DNS1=114.114.114.114    #这个是国内的DNS地址，是固定的；
+IPADDR=192.168.1.22     #IP地址
+PREFIXO=24              #设置子网掩码
+GATEWAY=192.168.1.1     #设置网关
+DNS1=114.114.114.114    #DNS
+BOOTPROTO=static        #固定IP
 
+```
 ## 更新系统
 这里只会更新或升级已安装的软件，不会安装任何新的软件：
 ```
