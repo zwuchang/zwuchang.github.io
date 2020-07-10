@@ -198,18 +198,21 @@
             </div>
         </div>
         
-        <span class="post-word-count">, 371 words</span>
+        <span class="post-word-count">, 352 words</span>
 
         <div class="post-content">
             <p>最小化安装centos后，一些熟悉的管理工具需要单独去安装</p>
 <h2 id="ip配置">IP配置</h2>
 <p>编辑 /etc/sysconfig/network-scripts/ifcfg-eth0</p>
-<p>ONBOOT=yes              #开启自动启用网络连接
-IPADDR0=192.168.169.22  #设置IP地址
-PREFIXO0=24             #设置子网掩码
-GATEWAY0=192.168.169.2  #设置网关
-DNS1=114.114.114.114    #这个是国内的DNS地址，是固定的；</p>
-<h2 id="更新系统">更新系统</h2>
+<pre><code>ONBOOT=yes              #开机启动
+
+IPADDR=192.168.1.22     #IP地址
+PREFIXO=24              #设置子网掩码
+GATEWAY=192.168.1.1     #设置网关
+DNS1=114.114.114.114    #DNS
+BOOTPROTO=static        #固定IP
+
+</code></pre><h2 id="更新系统">更新系统</h2>
 <p>这里只会更新或升级已安装的软件，不会安装任何新的软件：</p>
 <pre><code>yum update &amp;&amp; yum upgrade
 </code></pre><h2 id="安装软件">安装软件</h2>
