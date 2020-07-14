@@ -51,6 +51,7 @@ set incsearch
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 set cmdheight=2
+set backspace=2 "insert 模式下，可任意使用Backspace键删除内容
 set pastetoggle=<F9>  "切换paste开关的选项
 nmap tt :%s/\t/    /g<CR>
 
