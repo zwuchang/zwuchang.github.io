@@ -47,10 +47,15 @@ tar -C /usr/local -vxzf go1.14.4.linux-amd64.tar.gz
 ```
 * 配置PATH和代理，编辑~/.bashrc，最后添加以下内容
 ```
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-go env -w GO111MODULE=on
-go env -w GOPROXY=https://goproxy.io,direct
+# 当go命令不存在时，添加到path
+type go > /dev/null 2>&1
+if [ $? -ne 0 ] ;then
+    export GOPATH=$HOME/go
+    export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+    go env -w GO111MODULE=on
+    go env -w GOPROXY=https://goproxy.io,direct
+fi
+
 ```
 * 使刚添加的配置生效
 ```
