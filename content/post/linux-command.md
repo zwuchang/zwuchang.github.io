@@ -72,7 +72,10 @@ systemctl stop xxx    关闭
 > 以gzip压缩、解压
 
 ```bash
-压缩：tar -zcv -f filename.tar.gz 要被压缩的文件或目录
+压缩：
+    tar -zcv -f filename.tar.gz 要被压缩的文件或目录
+    tar -zcv -f filename.tar.gz --exclude=忽略的文件或目录  要被压缩的文件或目录
+
 查询：tar -ztv -f filename.tar.gz 
 解压缩：tar -zxv -f filename.tar.bz2 -C 解压到哪个目录下
 ```
