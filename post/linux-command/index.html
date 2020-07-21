@@ -197,7 +197,7 @@
             </div>
         </div>
         
-        <span class="post-word-count">, 354 words</span>
+        <span class="post-word-count">, 387 words</span>
 
         <div class="post-content">
             <p>一些linux命令</p>
@@ -267,9 +267,15 @@ systemctl stop xxx    关闭
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">压缩：tar -zcv -f filename.tar.gz 要被压缩的文件或目录
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">压缩：
+    tar -zcv -f filename.tar.gz 要被压缩的文件或目录
+    tar -zcv -f filename.tar.gz --exclude<span style="color:#000;font-weight:bold">=</span>忽略的文件或目录  要被压缩的文件或目录
+
 查询：tar -ztv -f filename.tar.gz 
 解压缩：tar -zxv -f filename.tar.bz2 -C 解压到哪个目录下
 </code></pre></td></tr></table>
