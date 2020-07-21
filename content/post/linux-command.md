@@ -68,3 +68,11 @@ systemctl stop xxx    关闭
 配置文件 /etc/apt/sources.list
 ```
 
+## 压缩、解压
+> 以gzip压缩、解压
+
+```bash
+压缩：tar -zcv -f filename.tar.gz 要被压缩的文件或目录
+查询：tar -ztv -f filename.tar.gz 
+解压缩：tar -zxv -f filename.tar.bz2 -C 解压到哪个目录下
+```
