@@ -6,10 +6,21 @@
     <description>Recent content on 振星的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Jul 2020 14:38:20 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2020 18:23:15 +0800</lastBuildDate>
     
 	<atom:link href="https://zwuchang.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用go实现一个端口转发</title>
+      <link>https://zwuchang.github.io/go-forward.html</link>
+      <pubDate>Mon, 27 Jul 2020 18:23:15 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/go-forward.html</guid>
+      <description>&lt;p&gt;我的使用场景：主机是windows10，使用自带的Hyper-V安装了CentOS7，虚拟交换机用的默认的，每次win10重启后，会给虚拟主机分配新IP。怎么用我熟悉的命令来监听本机IP，需要ssh连接虚拟机的时候，直接root@本机IP就可以了？&lt;br&gt;
+1、使用之前介绍的 &lt;a href=&#39;https://zwuchang.github.io/windows_portproxy.html&#39; target=&#39;_blank&#39;&gt;《windows端口转发》&lt;/a&gt;也可以完成，就是那串命令太长了，总记不住，我给虚拟机设定了固定IP后，重启win10后，不知为啥转发不生效了，要重新设置一次。&lt;br&gt;
+2、有没更简短的命令实现同样的效果呢？不用关心虚拟机IP是多少，想到了go，结合脚本自动汇报IP：&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>最小化安装centos7配置</title>
