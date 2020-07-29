@@ -31,7 +31,8 @@ yum update && yum upgrade
 ## 安装软件
 * 安装net-tools (提供ifconfig)，vim，cifs-utils(挂载windows共享目录用)
 ```
-yum install -y ifconfig vim cifs-utils wget get
+yum install -y ifconfig vim cifs-utils wget git
+yum groups install "Development Tools"
 ```
 
 
