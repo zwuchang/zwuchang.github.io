@@ -79,3 +79,8 @@ systemctl stop xxx    关闭
 查询：tar -ztv -f filename.tar.gz 
 解压缩：tar -zxv -f filename.tar.bz2 -C 解压到哪个目录下
 ```
+
+## 踢掉登录用户
+```
+pkill -kill -t [pts/1] // 使用w查看当前哪些用户登录
+```
