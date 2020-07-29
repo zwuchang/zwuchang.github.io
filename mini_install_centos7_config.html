@@ -198,7 +198,7 @@
             </div>
         </div>
         
-        <span class="post-word-count">, 383 words</span>
+        <span class="post-word-count">, 388 words</span>
 
         <div class="post-content">
             <p>最小化安装centos后，一些熟悉的管理工具需要单独去安装</p>
@@ -219,7 +219,8 @@ BOOTPROTO=static        #固定IP
 <ul>
 <li>安装net-tools (提供ifconfig)，vim，cifs-utils(挂载windows共享目录用)</li>
 </ul>
-<pre><code>yum install -y ifconfig vim cifs-utils wget get
+<pre><code>yum install -y ifconfig vim cifs-utils wget git
+yum groups install &quot;Development Tools&quot;
 </code></pre><h2 id="安装go">安装go</h2>
 <ul>
 <li>下载go安装文件</li>
