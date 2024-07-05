@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 振星的博客</title>
+    <link>https://zwuchang.github.io/categories/docker/</link>
+    <description>Recent content in docker on 振星的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 05 Jul 2024 15:46:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://zwuchang.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>缓解mac空间不足，为Docker Desktop腾出空间</title>
+      <link>https://zwuchang.github.io/post/docker_mac/</link>
+      <pubDate>Fri, 05 Jul 2024 15:46:39 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/docker_mac/</guid>
+      <description>&lt;p&gt;当前是 2024 年了，我还在用着 256G 的 Macbook Pro，还运行着 Docker Desktop，可想而知这硬盘空间是有多着急。
+没有找到直接更改存放数据目录的方法，只能曲线救国，利用软链接，将默认目录指向移动硬盘上的目录，这样就可以将 Docker Desktop 的数据存放在移动硬盘上，从而释放 Macbook Pro 的硬盘空间。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

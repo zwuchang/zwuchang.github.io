@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>centos7 on 振星的博客</title>
+    <link>https://zwuchang.github.io/categories/centos7/</link>
+    <description>Recent content in centos7 on 振星的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 09 Jul 2020 14:38:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://zwuchang.github.io/categories/centos7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>最小化安装centos7配置</title>
+      <link>https://zwuchang.github.io/mini_install_centos7_config.html</link>
+      <pubDate>Thu, 09 Jul 2020 14:38:20 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/mini_install_centos7_config.html</guid>
+      <description>&lt;p&gt;最小化安装centos后，一些熟悉的管理工具需要单独去安装&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Centos7挂载win10共享目录</title>
+      <link>https://zwuchang.github.io/centos7_mount_win10_share.html</link>
+      <pubDate>Wed, 08 Jul 2020 11:18:14 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/centos7_mount_win10_share.html</guid>
+      <description>&lt;p&gt;记录一下在我windows10通过Hyper-V安装的Centos7挂载windows10共享目录的设置&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

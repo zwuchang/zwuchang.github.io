@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Redis小记 | 振星的博客</title>
+    <meta property="og:title" content="Redis小记 - 振星的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2018-09-06T11:21:39&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2018-09-06T11:21:39&#43;08:00'>
+        
+    <meta name="Keywords" content="但行好事，莫问前程">
+    <meta name="description" content="Redis小记">
+        
+    <meta name="author" content="zhenxing">
+    <meta property="og:url" content="https://zwuchang.github.io/redis-comment.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/my.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://zwuchang.github.io/">
+                        振星的博客
+                    </a>
+                
+                <p class="description">或启于兴致，或忌于遗忘</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://zwuchang.github.io/">首页</a>
+                    
+                    <a  href="https://zwuchang.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://zwuchang.github.io/tools/" title="工具">工具</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#下载解压编译">下载，解压、编译</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#配置etcredisconf">配置/etc/redis.conf</a></li>
+    <li><a href="#启动">启动</a></li>
+    <li><a href="#连接">连接</a></li>
+    <li><a href="#不安装直接在线体验">不安装，直接在线体验</a></li>
+    <li><a href="#常用操作">常用操作</a></li>
+    <li><a href="#设置密码">设置密码</a></li>
+    <li><a href="#清空密码">清空密码：</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Redis小记</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年9月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://zwuchang.github.io/categories/redis'>redis</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <span class="post-word-count">, 1830 words</span>
+
+        <div class="post-content">
+            <p>Redis使用小记</p>
+<h2 id="下载解压编译">下载，解压、编译</h2>
+<pre><code>wget http://download.redis.io/releases/redis-4.0.11.tar.gz
+tar xzf redis-4.0.11.tar.gz
+cd redis-4.0.11
+make
+</code></pre><h2 id="安装">安装</h2>
+<pre><code>make PREFIX=/usr/local/redis install
+</code></pre><blockquote>
+<p>因为编译安装在/usr/local/redis下，所以下面操作都是在目录/usr/local/redis/bin下完成<br>
+cd /usr/local/redis/bin</p>
+</blockquote>
+<h2 id="配置etcredisconf">配置/etc/redis.conf</h2>
+<pre><code>bind 192.168.2.188 #支持局域网访问
+daemonize yes #后台运行
+</code></pre><h2 id="启动">启动</h2>
+<pre><code>./redis-server /etc/redis.conf
+</code></pre><h2 id="连接">连接</h2>
+<pre><code>./redis-cli -h 192.168.2.188
+</code></pre><h2 id="不安装直接在线体验">不安装，直接在线体验</h2>
+<p><a href="https://try.redis.io/">点此访问 web Redis https://try.redis.io</a></p>
+<h2 id="常用操作">常用操作</h2>
+<blockquote>
+<p>Redis 有5个基本数据结构:字符串（string）、散列（hash）、列表（list）、集合（set）和有序集合（sorted set）</p>
+</blockquote>
+<ol>
+<li>string 操作</li>
+</ol>
+<blockquote>
+<p>string 表示的是一个可变的字节数组，我们初始化字符串的内容、可以拿到字符串的长度，可以获取string的子串，可以覆盖string的子串内容，可以追加子串.</p>
+</blockquote>
+<ul>
+<li>初始化字符串 提供【变量名称】和【变量内容】</li>
+</ul>
+<pre><code>set msg &quot;hello world&quot;
+</code></pre><ul>
+<li>查看字符串内容</li>
+</ul>
+<pre><code>get msg
+</code></pre><ul>
+<li>获取字符串长度 提供【变量名称】</li>
+</ul>
+<pre><code>strlen msg
+</code></pre><ul>
+<li>获取子串 提供【变量名称】以及开始和结束位置 [start,end]</li>
+</ul>
+<pre><code>getrange msg 5 10
+</code></pre><ul>
+<li>覆盖子串 提供【变量名称】以及开始位置和目标子串</li>
+</ul>
+<pre><code>setrange msg 5 &quot; china&quot;
+</code></pre><ul>
+<li>追加子串</li>
+</ul>
+<pre><code>append msg &quot;, nihao.&quot;
+</code></pre><ul>
+<li>批量操作</li>
+</ul>
+<pre><code>set name1 zhansan
+set name2 lisi
+</code></pre><ol>
+<li>批量读
+<pre><code>mget name1 name2
+</code></pre></li>
+<li>批量写
+<pre><code>mset name1 val1 name2 val2 name3 val3
+</code></pre></li>
+</ol>
+<ul>
+<li>设置过期时间和 set 命令扩展</li>
+</ul>
+<pre><code>expire name1 5       #5s 后过期
+setex name1 5 val1   #5s 后过期，等价于set + expire
+setnx name1 code     #如果name1不存在，就执行set创建
+</code></pre><ul>
+<li>字符串的寿命</li>
+</ul>
+<pre><code>ttl name1            #返回正数表示过期时间，返回-2表示变量不存在，-1表示没有设置过期时间
+</code></pre><ul>
+<li>对整数进行加减</li>
+</ul>
+<blockquote>
+<p>自增的范围是signed long的最小，最大值【-9223372036854775808 ~ 9223372036854775807】，超过这个值，redis会报错</p>
+</blockquote>
+<pre><code>set age 30
+incr age      # 加1
+incrby age 5  # 加5
+incrby age -5 # 减5
+decr age      # 减1
+decrby age 5  # 减5
+</code></pre><ul>
+<li>主动删除</li>
+</ul>
+<pre><code>del msg
+</code></pre><ul>
+<li>使用php API 操作
+<a href="https://github.com/phpredis/phpredis">https://github.com/phpredis/phpredis</a></li>
+</ul>
+<pre><code>$redis = new Redis();
+$redis-&gt;connect('192.168.2.188','6379',1);
+$redis-&gt;set('msg','hello world');
+$redis-&gt;get('msg');
+$redis-&gt;delete('msg');
+</code></pre><p>2.LIST 列表常用操作</p>
+<blockquote>
+<p>Redis 的列表结构常用来做异步队列使用。将需要延后处理的任务结构体序列化成字符串塞进 Redis 的列表，另一个线程从这个列表中轮询数据进行处理。</p>
+</blockquote>
+<ul>
+<li>头元素和尾元素</li>
+</ul>
+<blockquote>
+<p>头元素指的是列表左端/前端第一个元素，尾元素指的是列表右端/后端第一个元素。</p>
+</blockquote>
+<ul>
+<li>空列表</li>
+</ul>
+<blockquote>
+<p>指不包含任何元素的列表，Redis将不存在的key也视为空列表。</p>
+</blockquote>
+<ul>
+<li>右边进左边出：队列 （先进先出）</li>
+</ul>
+<pre><code>rpush books python java php golang   # 添加元素
+llen books                           # 队列元素长度
+lpop books                           # 最先加入的python出来
+lpop books
+lpop books
+lpop books 
+</code></pre><ul>
+<li>右边进右边出：栈 （先进后出）</li>
+</ul>
+<pre><code>rpush books python php js css java golang  # 添加元素
+rpop books                                 # 最后添加的golang出来
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$redis-&gt;delete('language');
+$redis-&gt;lPush('language','java');
+$redis-&gt;lPush('language','php');
+$redis-&gt;lPush('language','linux');
+</code></pre><ul>
+<li>RPUSH 将一个或多个值 value 插入到列表 key 的表尾(最右边)。</li>
+</ul>
+<pre><code>rpush language iOS #成功后返回list长度
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$redis-&gt;rPush('language','iOS');
+</code></pre><ul>
+<li>RPUSHX</li>
+</ul>
+<blockquote>
+<p>RPUSHX key value<br>
+当key存在并且是一个列表时，将值value插入到列表key的表尾。</p>
+</blockquote>
+<pre><code>rpushx language ruby
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$redis-&gt;rPushX('language','ruby');
+</code></pre><ul>
+<li>LRANGE</li>
+</ul>
+<blockquote>
+<p>LRANGE key start stop 返回列表key中指定区间内的元素，区间以偏移量start和stop指定。<br>
+0 表示第一个元素，1表示第二个元素，-1表示最后一个元素，-2表示倒数第二个元素，依此类推</p>
+</blockquote>
+<pre><code>LRANGE language 0 -1 返回所有
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$arr = $redis-&gt;lRange('language', 0, -1);  # 若有值，返回数组
+</code></pre><ul>
+<li>LINDEX</li>
+</ul>
+<blockquote>
+<p>LINDEX key index
+返回列表key中，下标为index的元素，0表示第一个，1表示第二个，-1表示最后一个，-2表示倒数第二个，依此类推&hellip;<br>
+如果key不为list，返回错误</p>
+</blockquote>
+<pre><code>lindex language -1
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$s = $redis-&gt;lget('language',1); 或 $s = $redis-&gt;lindex('language',1);
+echo $s;
+</code></pre><ul>
+<li>LPOP</li>
+</ul>
+<blockquote>
+<p>移除并返回列表 key 的头元素。</p>
+</blockquote>
+<pre><code>lpop language
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$redis-&gt;lPop('language');
+</code></pre><ul>
+<li>RPOP</li>
+</ul>
+<blockquote>
+<p>RPOP key<br>
+移除并返回列表key的尾元素</p>
+</blockquote>
+<pre><code>rpop language
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$redis-&gt;rPop('language');
+</code></pre><ul>
+<li>LLEN</li>
+</ul>
+<blockquote>
+<p>LLEN key<br>
+返回列表key的长度，如果key不存在，返回0，如果key不是列表类型，返回一个错误。</p>
+</blockquote>
+<pre><code>llen language
+</code></pre><ul>
+<li>使用php API 操作</li>
+</ul>
+<pre><code>$len = $redis-&gt;lSize('language');
+或
+$len = $redis-&gt;lLen('language');
+</code></pre><ul>
+<li>SADD 无序集合</li>
+</ul>
+<blockquote>
+<p>SADD key member [member &hellip;] <br>
+将一个或多个member元素加入到集合key当中，已经存在于集合的member元素将被忽略。 <br>
+假如key不存在，则创建一个只包含member元素作为成员的集合。当key不是集合类型时，返回一个错误。在Redis2.4版本以前，SADD只接受单个member值。</p>
+</blockquote>
+<pre><code>sadd nosql &quot;Redis&quot; &quot;MongoDB&quot; &quot;Neo4j&quot;
+</code></pre><p>使用smembers查看刚设置的值</p>
+<pre><code>smembers nosql
+</code></pre><ul>
+<li>ZADD 有序集合</li>
+</ul>
+<blockquote>
+<p>将一个或多个member元素及其score值加入到有序集key当中。<br>
+如果某个member已经是有序集合的成员，那么更新这个member的score的值，并通过重新插入这个member元素，来保证该member在正确的位置上。 <br>
+score值可以是整数值或双精度浮点数。<br>
+如果key不存在，则创建一个空的有序集并执行ZADD操作。当key存在但不是有序集类型时，返回一个错误。</p>
+</blockquote>
+<pre><code>ZADD page_rank 9 baidu.com 8 bing.com
+</code></pre><h2 id="设置密码">设置密码</h2>
+<pre><code>CONFIG SET requirepass password # 密码设置为mypassword
+</code></pre><p>下次再redis-cli -h 192.168.2.188操作时，就会提示</p>
+<pre><code>(error) NOAUTH Authentication required.
+</code></pre><p>除非先使用auth mypassword解锁</p>
+<h2 id="清空密码">清空密码：</h2>
+<pre><code>CONFIG SET requirepass ''
+</code></pre>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://zwuchang.github.io/">zhenxing</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://zwuchang.github.io/redis-comment.html">https://zwuchang.github.io/redis-comment.html</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/supervisor/">Supervisor安装及使用</a></li>
+        
+        <li><a href="/install_php7.html">编译安装php7</a></li>
+        
+        <li><a href="/post/file_get_content/">使用file_get_contents发送post请求</a></li>
+        
+        <li><a href="/vim_move.html">Vim移动行</a></li>
+        
+        <li><a href="/php_curl_http.html">php中使用curl发送http请求</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://zwuchang.github.io/tags/redis'>redis</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://zwuchang.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://zwuchang.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://zwuchang.github.io/post/docker_mac/" title="缓解mac空间不足，为Docker Desktop腾出空间">缓解mac空间不足，为Docker Desktop腾出空间</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/go-forward.html" title="用go实现一个端口转发">用go实现一个端口转发</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/mini_install_centos7_config.html" title="最小化安装centos7配置">最小化安装centos7配置</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/centos7_mount_win10_share.html" title="Centos7挂载win10共享目录">Centos7挂载win10共享目录</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/centos_bash.html" title="Linux_bash基础">Linux_bash基础</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/windows_portproxy.html" title="Windows端口转发">Windows端口转发</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/addHugoCommand.html" title="给hugo添加一个命令">给hugo添加一个命令</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/cenots7-set-default.html" title="Centos7关闭图形界面">Centos7关闭图形界面</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/vim_config.html" title="vim配置文件">vim配置文件</a>
+    </li>
+    
+    <li>
+        <a href="https://zwuchang.github.io/post/linux-command/" title="Linux命令小记">Linux命令小记</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://zwuchang.github.io/categories/bash/">bash (1)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/centos7/">centos7 (2)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/docker/">docker (1)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/go/">go (2)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/hugo/">hugo (1)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/linux/">linux (2)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/mac/">mac (1)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/php/">php (3)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/redis/">redis (1)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/supervisord/">supervisord (1)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/vim/">vim (1)</a></li>
+    
+    <li><a href="https://zwuchang.github.io/categories/win/">win (3)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://zwuchang.github.io/tags/bash/">bash</a>
+    
+    <a href="https://zwuchang.github.io/tags/centos7/">centos7</a>
+    
+    <a href="https://zwuchang.github.io/tags/go/">go</a>
+    
+    <a href="https://zwuchang.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://zwuchang.github.io/tags/linux/">linux</a>
+    
+    <a href="https://zwuchang.github.io/tags/mac/">mac</a>
+    
+    <a href="https://zwuchang.github.io/tags/php/">php</a>
+    
+    <a href="https://zwuchang.github.io/tags/redis/">redis</a>
+    
+    <a href="https://zwuchang.github.io/tags/vim/">vim</a>
+    
+    <a href="https://zwuchang.github.io/tags/win/">win</a>
+    
+    <a href="https://zwuchang.github.io/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">端口转发</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://linux.vbird.org/" title="鸟哥的Linux私房菜">鸟哥的Linux私房菜</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://zwuchang.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2024 <a href="https://zwuchang.github.io/">振星的博客 By zhenxing</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/my.js'></script>
+
+</body>
+
+</html>

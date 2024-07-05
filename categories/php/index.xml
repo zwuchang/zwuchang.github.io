@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on 振星的博客</title>
+    <link>https://zwuchang.github.io/categories/php/</link>
+    <description>Recent content in php on 振星的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 07 May 2018 18:10:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://zwuchang.github.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>编译安装php7</title>
+      <link>https://zwuchang.github.io/install_php7.html</link>
+      <pubDate>Mon, 07 May 2018 18:10:51 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/install_php7.html</guid>
+      <description>&lt;p&gt;记录一次在centos下编译安装php7&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用file_get_contents发送post请求</title>
+      <link>https://zwuchang.github.io/post/file_get_content/</link>
+      <pubDate>Tue, 21 Nov 2017 17:16:29 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/file_get_content/</guid>
+      <description>&lt;p&gt;使用file_get_contents发送post请求&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>php中使用curl发送http请求</title>
+      <link>https://zwuchang.github.io/php_curl_http.html</link>
+      <pubDate>Tue, 14 Mar 2017 15:22:27 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/php_curl_http.html</guid>
+      <description>&lt;p&gt;php中使用curl发送http请求&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
