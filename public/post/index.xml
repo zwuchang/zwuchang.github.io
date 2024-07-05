@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 振星的博客</title>
+    <link>https://zwuchang.github.io/post/</link>
+    <description>Recent content in Posts on 振星的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 05 Jul 2024 15:46:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://zwuchang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>缓解mac空间不足，为Docker Desktop腾出空间</title>
+      <link>https://zwuchang.github.io/post/docker_mac/</link>
+      <pubDate>Fri, 05 Jul 2024 15:46:39 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/docker_mac/</guid>
+      <description>&lt;p&gt;当前是 2024 年了，我还在用着 256G 的 Macbook Pro，还运行着 Docker Desktop，可想而知这硬盘空间是有多着急。
+没有找到直接更改存放数据目录的方法，只能曲线救国，利用软链接，将默认目录指向移动硬盘上的目录，这样就可以将 Docker Desktop 的数据存放在移动硬盘上，从而释放 Macbook Pro 的硬盘空间。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>用go实现一个端口转发</title>
+      <link>https://zwuchang.github.io/go-forward.html</link>
+      <pubDate>Mon, 27 Jul 2020 18:23:15 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/go-forward.html</guid>
+      <description>&lt;p&gt;我的使用场景：主机是windows10，使用自带的Hyper-V安装了CentOS7，虚拟交换机用的默认的，每次win10重启后，会给虚拟主机分配新IP。怎么用我熟悉的命令来监听本机IP，需要ssh连接虚拟机的时候，直接root@本机IP就可以了？&lt;br&gt;
+1、使用之前介绍的 &lt;a href=&#39;https://zwuchang.github.io/windows_portproxy.html&#39; target=&#39;_blank&#39;&gt;《windows端口转发》&lt;/a&gt;也可以完成，就是那串命令太长了，总记不住，我给虚拟机设定了固定IP后，重启win10后，不知为啥转发不生效了，要重新设置一次。&lt;br&gt;
+2、有没更简短的命令实现同样的效果呢？不用关心虚拟机IP是多少，想到了go，结合脚本自动汇报IP：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>最小化安装centos7配置</title>
+      <link>https://zwuchang.github.io/mini_install_centos7_config.html</link>
+      <pubDate>Thu, 09 Jul 2020 14:38:20 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/mini_install_centos7_config.html</guid>
+      <description>&lt;p&gt;最小化安装centos后，一些熟悉的管理工具需要单独去安装&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Centos7挂载win10共享目录</title>
+      <link>https://zwuchang.github.io/centos7_mount_win10_share.html</link>
+      <pubDate>Wed, 08 Jul 2020 11:18:14 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/centos7_mount_win10_share.html</guid>
+      <description>&lt;p&gt;记录一下在我windows10通过Hyper-V安装的Centos7挂载windows10共享目录的设置&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux_bash基础</title>
+      <link>https://zwuchang.github.io/centos_bash.html</link>
+      <pubDate>Tue, 07 Jul 2020 13:46:44 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/centos_bash.html</guid>
+      <description>&lt;p&gt;shell的简单历史：第一个流行的shell是由Steven Bourne发展出来的，为了纪念他所以就称为Bourne shell ，或直接简称为sh ！而后来另一个广为流传的shell是由柏克莱大学的Bill Joy设计依附于BSD版的Unix系统中的shell ，这个shell的语法有点类似C语言，所以才得名为C shell ，简称为csh ！由于在学术界Sun主机势力相当的庞大，而Sun主要是BSD的分支之一，所以C shell也是另一个很重要而且流传很广的shell之一。&lt;/p&gt;
+&lt;p&gt;由于Linux是用C语言编写的，很多程序员使用C来开发软件，因此C shell相对的就很热门了。
+目前我们的Linux (以CentOS 7.x 为例) 有多少我们可以使用的shells 呢？你可以检查一下/etc/shells 这个档案，至少就有底下这几个可以用的shells ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/bin/sh (已经被/bin/bash 所取代)&lt;/li&gt;
+&lt;li&gt;/bin/bash (就是Linux 预设的shell)&lt;/li&gt;
+&lt;li&gt;/bin/tcsh (整合C Shell ，提供更多的功能)&lt;/li&gt;
+&lt;li&gt;/bin/csh (已经被/bin/tcsh 所取代)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows端口转发</title>
+      <link>https://zwuchang.github.io/windows_portproxy.html</link>
+      <pubDate>Tue, 07 Jul 2020 11:15:36 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/windows_portproxy.html</guid>
+      <description>&lt;p&gt;通过windows自带工具netsh，实现任何传入到本地端口的TCP连接，都重定向到本地指定端口或本地可访问的远程端口。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>给hugo添加一个命令</title>
+      <link>https://zwuchang.github.io/addHugoCommand.html</link>
+      <pubDate>Mon, 06 Jul 2020 13:52:32 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/addHugoCommand.html</guid>
+      <description>&lt;p&gt;给hugo加一个命令，并发布到github上&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Centos7关闭图形界面</title>
+      <link>https://zwuchang.github.io/cenots7-set-default.html</link>
+      <pubDate>Fri, 03 Jul 2020 18:44:53 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/cenots7-set-default.html</guid>
+      <description>&lt;p&gt;利用win10自带的虚拟机管理工具Hyper-V安装好CentOS7，把图形界面也给装上了，内存吃得厉害。赶紧把它关掉&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vim配置文件</title>
+      <link>https://zwuchang.github.io/vim_config.html</link>
+      <pubDate>Fri, 03 Jul 2020 16:41:31 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/vim_config.html</guid>
+      <description>&lt;p&gt;记录一下使用过的一个vim配置&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux命令小记</title>
+      <link>https://zwuchang.github.io/post/linux-command/</link>
+      <pubDate>Fri, 03 Jul 2020 16:06:06 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/linux-command/</guid>
+      <description>&lt;p&gt;一些linux命令&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解除win端口占用</title>
+      <link>https://zwuchang.github.io/post/find-win-process/</link>
+      <pubDate>Wed, 01 Jul 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/find-win-process/</guid>
+      <description>&lt;p&gt;查找某个端口被哪个程序占用并结束它&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Redis小记</title>
+      <link>https://zwuchang.github.io/redis-comment.html</link>
+      <pubDate>Thu, 06 Sep 2018 11:21:39 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/redis-comment.html</guid>
+      <description>&lt;p&gt;Redis使用小记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Supervisor安装及使用</title>
+      <link>https://zwuchang.github.io/post/supervisor/</link>
+      <pubDate>Mon, 06 Aug 2018 16:59:07 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/supervisor/</guid>
+      <description>&lt;p&gt;Supervisor安装及使用&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>编译安装php7</title>
+      <link>https://zwuchang.github.io/install_php7.html</link>
+      <pubDate>Mon, 07 May 2018 18:10:51 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/install_php7.html</guid>
+      <description>&lt;p&gt;记录一次在centos下编译安装php7&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用file_get_contents发送post请求</title>
+      <link>https://zwuchang.github.io/post/file_get_content/</link>
+      <pubDate>Tue, 21 Nov 2017 17:16:29 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/post/file_get_content/</guid>
+      <description>&lt;p&gt;使用file_get_contents发送post请求&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vim移动行</title>
+      <link>https://zwuchang.github.io/vim_move.html</link>
+      <pubDate>Mon, 04 Sep 2017 15:10:25 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/vim_move.html</guid>
+      <description>&lt;p&gt;vim中怎么移动文件内容呢，可以使用move&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>php中使用curl发送http请求</title>
+      <link>https://zwuchang.github.io/php_curl_http.html</link>
+      <pubDate>Tue, 14 Mar 2017 15:22:27 +0800</pubDate>
+      
+      <guid>https://zwuchang.github.io/php_curl_http.html</guid>
+      <description>&lt;p&gt;php中使用curl发送http请求&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
